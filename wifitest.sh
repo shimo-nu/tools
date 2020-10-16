@@ -1,8 +1,11 @@
 #!/bin/sh
 
+
+# wifiリアルタイム表示
+# on linux 
+tput civis
 tput clear
 while true; do
-	data + '%F %T'
 	nmcli dev wifi
 	tput ed
 	sleep 1
