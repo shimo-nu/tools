@@ -1,0 +1,4 @@
+alias ..='cd ..'
+alias ll='ls -al'
+alias rm='rm -i'
+alias rmr='rm -r'
