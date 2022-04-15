@@ -19,5 +19,15 @@ set virtualedit=onemore
 " enable syntax
 syntax enable
 
+" tab config
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+set laststatus=2
+
+set hidden
+
+set termguicolors
 
 set ignorecase
