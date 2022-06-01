@@ -113,5 +113,5 @@ if ! shopt -oq posix; then
 fi
 
 
-myalias='./.myalias'
+myalias='~/.myalias'
 source $myalias
