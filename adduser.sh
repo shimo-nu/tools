@@ -5,6 +5,7 @@ GROUPNAME=
 USERID=
 GROUPID=
 
+PASSWD=
 
 if [ `whoami` != "root"  ]; then
 	echo "Please run by root user"
@@ -21,3 +22,6 @@ usermod -u $USERID $USERNAME
 
 # change groupid
 groupmod -g $GROUPID $GROUPNAME
+
+# set passwd
+echo "$USERNAME:$PASSWD" | chpasswd
