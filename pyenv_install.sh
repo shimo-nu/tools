@@ -15,11 +15,15 @@ if [ `whoami` = "root" ]; then
 		git
 
 fi
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
-cd $HOME/.pyenv
-git checkout v2.0.3
+if [ ! -e ~/.pyenv ]; then
+
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+	git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+
+	cd $HOME/.pyenv
+	git checkout v2.0.3
+fi
 
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
