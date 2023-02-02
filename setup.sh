@@ -1,23 +1,22 @@
 #!/bin/bash
 
-if [ ${EUID:-${UID}} != 0 ]; then
+if [ ${EUID:-${UID}} == 0 ]; then
 	echo "Please run script by supervisor"
-# 	exit 1
+	## update 
+	apt update
+	# apt upgrade
+	apt install -y git tmux curl vim docker.io
 fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-## update 
-apt update
-# apt upgrade
-
-apt install -y git tmux curl vim docker.io
 
 
 # setup
 cp -f .bashrc ~/
 cp -f .vimrc ~/
 cp -f .myalias ~/
+cp -f .tmux.conf ~/
 
 source .bashrc
 
